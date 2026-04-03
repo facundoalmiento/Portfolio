@@ -1,150 +1,294 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Facu Almiento, desarrollador trainee/junior. Comparto proyectos y practicas con foco en React, Node.js y desarrollo web.">
     <title>Facu Almiento | Fullstack Developer</title>
 
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
     <style>
+        :root {
+            color-scheme: light;
+        }
+
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Manrope', sans-serif;
+            background:
+                radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 32%),
+                radial-gradient(circle at top right, rgba(15, 23, 42, 0.09), transparent 28%),
+                linear-gradient(180deg, #f8fafc 0%, #eef2ff 48%, #f8fafc 100%);
+        }
+
+        .grid-pattern {
+            background-image:
+                linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+            background-size: 34px 34px;
         }
     </style>
 </head>
 
-<body class="bg-gradient-to-br from-slate-100 via-white to-slate-200 text-slate-900">
+<body class="text-slate-900 antialiased">
+    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
+        <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+            <a href="#top" class="text-lg font-extrabold tracking-tight text-slate-950">
+                Facu<span class="text-sky-600">Dev</span>
+            </a>
 
-    <!-- HEADER -->
-    <header class="sticky top-0 backdrop-blur-md bg-white/70 border-b border-slate-200 z-50">
-        <div class="max-w-6xl mx-auto px-6 py-6 flex justify-between items-center">
-            <div class="text-xl font-bold">
-                Facu<span class="text-blue-600">Dev</span>
-            </div>
-            <nav class="space-x-8 font-medium text-slate-700">
-                <a href="#projects" class="hover:text-blue-600 transition">Projects</a>
-                <a href="#skills" class="hover:text-blue-600 transition">Skills</a>
-                <a href="#contact" class="hover:text-blue-600 transition">Contact</a>
+            <nav class="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
+                <a href="#about" class="transition hover:text-sky-600">Perfil</a>
+                <a href="#services" class="transition hover:text-sky-600">Valor</a>
+                <a href="#projects" class="transition hover:text-sky-600">Proyectos</a>
+                <a href="#contact" class="transition hover:text-sky-600">Contacto</a>
             </nav>
         </div>
     </header>
 
-    <!-- HERO -->
-    <section class="relative max-w-6xl mx-auto px-6 py-8 grid md:grid-cols-2 gap-16 items-center">
+    <main id="top">
+        <section class="relative overflow-hidden">
+            <div class="grid-pattern absolute inset-0 -z-20 opacity-40"></div>
+            <div class="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-sky-100/80 to-transparent"></div>
 
-        <!-- Blur background element -->
-        <div class="absolute inset-0 -z-10 flex justify-center items-center blur-3xl opacity-30">
-            <div class="w-[600px] h-[600px] bg-blue-400 rounded-full"></div>
-        </div>
+            <div class="mx-auto grid max-w-6xl gap-14 px-6 py-16 md:grid-cols-[1.2fr_0.8fr] md:py-24">
+                <div class="max-w-3xl">
+                    <p class="mb-5 inline-flex rounded-full border border-sky-200 bg-white/80 px-4 py-2 text-sm font-semibold text-sky-700 shadow-sm">
+                        Desarrollador trainee/junior con foco en seguir creciendo dentro de un equipo
+                    </p>
 
-        <div>
-            <p class="text-blue-600 font-semibold mb-4 tracking-wide uppercase text-sm">
-                Fullstack Developer — Argentina
-            </p>
+                    <h1 class="max-w-3xl text-5xl font-extrabold leading-tight tracking-tight text-slate-950 md:text-6xl">
+                        Construyo proyectos web modernos mientras sigo formandome como developer.
+                    </h1>
 
-            <h1 class="text-5xl md:text-6xl font-extrabold leading-tight mb-6">
-                I build modern web applications focused on performance and scalability.
-            </h1>
+                    <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                        Estoy desarrollando experiencia en frontend y fullstack a traves de proyectos propios. Me
+                        interesa sumarme a un equipo donde pueda aportar, aprender buenas practicas y seguir creciendo
+                        en React, Node.js y desarrollo web.
+                    </p>
 
-            <p class="text-lg text-slate-600 mb-8 max-w-xl">
-                Specialized in React and Node.js, I create clean, efficient and user-centered solutions
-                from frontend interfaces to backend architecture.
-            </p>
+                    <div class="mt-10 flex flex-wrap gap-4">
+                        <a href="#contact"
+                            class="rounded-2xl bg-slate-950 px-7 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
+                            Coordinemos una entrevista
+                        </a>
+                        <a href="#projects"
+                            class="rounded-2xl border border-slate-300 bg-white px-7 py-4 text-sm font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-400">
+                            Ver trabajo reciente
+                        </a>
+                    </div>
 
-            <div class="flex gap-4">
-                <a href="#projects"
-                    class="bg-blue-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
-                    View Projects
-                </a>
+                    <div class="mt-12 grid gap-4 sm:grid-cols-3">
+                        <div class="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
+                            <p class="text-sm font-semibold text-slate-500">Perfil</p>
+                            <p class="mt-2 text-lg font-bold text-slate-900">Trainee / Junior</p>
+                        </div>
+                        <div class="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
+                            <p class="text-sm font-semibold text-slate-500">Stack base</p>
+                            <p class="mt-2 text-lg font-bold text-slate-900">React, Node.js, SQL</p>
+                        </div>
+                        <div class="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
+                            <p class="text-sm font-semibold text-slate-500">Enfoque</p>
+                            <p class="mt-2 text-lg font-bold text-slate-900">Aprender y mejorar</p>
+                        </div>
+                    </div>
+                </div>
 
-                <a href="#contact"
-                    class="border border-slate-300 px-8 py-4 rounded-xl font-semibold hover:bg-slate-200 transition">
-                    Contact Me
-                </a>
+                <aside class="self-end rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-2xl shadow-slate-900/20">
+                    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">Lo que ofrezco hoy</p>
+                    <div class="mt-8 space-y-6">
+                        <div>
+                            <p class="text-lg font-bold">Buenas bases y muchas ganas</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">
+                                Me gusta trabajar con orden, entender lo que hago y mejorar proyecto a proyecto.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold">Aprendizaje constante</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">
+                                Estoy enfocado en seguir sumando practica real en frontend, backend e integracion.
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-lg font-bold">Compromiso y actitud</p>
+                            <p class="mt-2 text-sm leading-7 text-slate-300">
+                                Busco aportar con responsabilidad, buena predisposicion y ganas de crecer dentro de un equipo.
+                            </p>
+                        </div>
+                    </div>
+                </aside>
             </div>
-        </div>
+        </section>
 
-        <div class="h-[400px] rounded-3xl bg-gradient-to-br from-blue-600 to-blue-400 shadow-2xl">
-        </div>
+        <section id="about" class="mx-auto max-w-6xl px-6 py-20">
+            <div class="grid gap-10 rounded-[2rem] border border-slate-200 bg-white/90 p-10 shadow-xl shadow-slate-200/40 md:grid-cols-[0.9fr_1.1fr]">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Perfil</p>
+                    <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">
+                        Un perfil junior con base tecnica y ganas reales de crecer.
+                    </h2>
+                </div>
 
-    </section>
+                <div class="space-y-5 text-base leading-8 text-slate-600">
+                    <p>
+                        Estoy formandome como desarrollador web y construyendo proyectos para ganar experiencia real
+                        en herramientas y flujos de trabajo usados en el dia a dia profesional.
+                    </p>
+                    <p>
+                        Me interesa especialmente el desarrollo con React y Node.js, y disfruto trabajar tanto en la
+                        interfaz como en la logica de una aplicacion.
+                    </p>
+                    <p>
+                        Hoy estoy buscando una oportunidad para seguir aprendiendo dentro de un equipo, sumar
+                        experiencia profesional y aportar con dedicacion, constancia y ganas de mejorar.
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    <!-- ABOUT -->
-    <section class="max-w-4xl mx-auto px-6 py-20 text-center">
-        <h2 class="text-3xl font-bold mb-6">About Me</h2>
-        <p class="text-slate-600 text-lg leading-relaxed">
-            I'm a fullstack developer passionate about building efficient and scalable
-            web applications. I enjoy working across the entire stack, from crafting
-            responsive interfaces to designing backend systems and database structures.
-        </p>
-    </section>
-
-    <!-- PROJECTS -->
-    <section id="projects" class="max-w-6xl mx-auto px-6 py-24">
-        <h2 class="text-4xl font-bold mb-16">Projects</h2>
-
-        <div class="grid md:grid-cols-2 gap-10">
-
-            <div class="bg-white p-10 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300">
-                <h3 class="text-2xl font-bold mb-4">FlowPilot</h3>
-                <p class="text-slate-600 mb-6">
-  SaaS landing page concept designed to target freelance professionals. 
-  Focused on conversion structure, pricing psychology and responsive layout.
-</p>
-<div class="flex gap-4 text-sm font-medium mb-6">
-  <span class="bg-slate-200 px-3 py-1 rounded-full">HTML</span>
-  <span class="bg-slate-200 px-3 py-1 rounded-full">CSS</span>
-  <span class="bg-slate-200 px-3 py-1 rounded-full">UI Design</span>
-</div>
-                <a href="https://flowpilot-landing-iota.vercel.app/" target="_blank"
-   class="text-blue-600 font-semibold hover:underline">
-  Live Demo →
-</a>
+        <section id="services" class="mx-auto max-w-6xl px-6 py-10">
+            <div class="mb-12 max-w-2xl">
+                <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Lo que puedo aportar</p>
+                <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950">Como puedo sumar mientras sigo creciendo</h2>
             </div>
 
-            <div class="bg-white p-10 rounded-3xl shadow-xl hover:-translate-y-2 transition duration-300">
-                <h3 class="text-2xl font-bold mb-4">Task Manager App</h3>
-                <p class="text-slate-600 mb-6">
-                    Fullstack application built with React and Node.js featuring
-                    authentication, CRUD operations and RESTful API integration.
+            <div class="grid gap-6 md:grid-cols-3">
+                <article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Frontend</p>
+                    <h3 class="mt-4 text-2xl font-bold text-slate-950">Interes real por el frontend</h3>
+                    <p class="mt-4 text-sm leading-7 text-slate-600">
+                        Me interesa crear interfaces limpias, responsive y cada vez mas cuidadas desde lo visual y lo
+                        funcional.
+                    </p>
+                </article>
+
+                <article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Backend</p>
+                    <h3 class="mt-4 text-2xl font-bold text-slate-950">Base fullstack en desarrollo</h3>
+                    <p class="mt-4 text-sm leading-7 text-slate-600">
+                        Vengo practicando autenticacion, CRUD, consumo de APIs y estructura de aplicaciones para seguir
+                        consolidando una base tecnica solida.
+                    </p>
+                </article>
+
+                <article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
+                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Producto</p>
+                    <h3 class="mt-4 text-2xl font-bold text-slate-950">Ganas de aprender en serio</h3>
+                    <p class="mt-4 text-sm leading-7 text-slate-600">
+                        Busco entornos donde pueda recibir feedback, mejorar rapido y convertir practica en experiencia
+                        profesional concreta.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="mx-auto max-w-6xl px-6 py-24">
+            <div class="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
+                <div class="max-w-2xl">
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Proyectos</p>
+                    <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950">Trabajo reciente</h2>
+                </div>
+                <p class="max-w-xl text-sm leading-7 text-slate-600">
+                    Una seleccion breve de proyectos para mostrar en que estoy trabajando y como vengo evolucionando.
                 </p>
-                <a href="#" class="text-blue-600 font-semibold hover:underline">
-                    View Project →
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-2">
+                <article class="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-xl shadow-slate-200/50">
+                    <div class="flex items-center justify-between gap-4">
+                        <h3 class="text-2xl font-extrabold text-slate-950">FlowPilot</h3>
+                        <span class="rounded-full bg-sky-100 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-sky-700">
+                            Landing SaaS
+                        </span>
+                    </div>
+                    <p class="mt-6 text-sm leading-7 text-slate-600">
+                        Landing orientada a practicar jerarquia visual, estructura y armado responsive. Me sirvio para
+                        mejorar decisiones de UI y presentacion.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-slate-700">
+                        <span class="rounded-full bg-slate-100 px-4 py-2">HTML</span>
+                        <span class="rounded-full bg-slate-100 px-4 py-2">CSS</span>
+                        <span class="rounded-full bg-slate-100 px-4 py-2">Responsive UI</span>
+                    </div>
+                    <a href="https://flowpilot-landing-iota.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="mt-8 inline-flex items-center gap-2 text-sm font-bold text-sky-700 transition hover:text-sky-900">
+                        Ver demo online
+                        <span aria-hidden="true">-&gt;</span>
+                    </a>
+                </article>
+
+                <article class="rounded-[2rem] border border-slate-200 bg-white p-10 shadow-xl shadow-slate-200/50">
+                    <div class="flex items-center justify-between gap-4">
+                        <h3 class="text-2xl font-extrabold text-slate-950">Task Manager App</h3>
+                        <span class="rounded-full bg-emerald-100 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
+                            Fullstack App
+                        </span>
+                    </div>
+                    <p class="mt-6 text-sm leading-7 text-slate-600">
+                        Proyecto enfocado en practicar autenticacion, gestion de tareas y conexion entre frontend y
+                        backend. Representa parte de mi proceso de aprendizaje en fullstack.
+                    </p>
+                    <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-slate-700">
+                        <span class="rounded-full bg-slate-100 px-4 py-2">React</span>
+                        <span class="rounded-full bg-slate-100 px-4 py-2">Node.js</span>
+                        <span class="rounded-full bg-slate-100 px-4 py-2">REST API</span>
+                    </div>
+                    <p class="mt-8 text-sm font-semibold text-slate-500">
+                        Agrega aca el link al repo o demo para mostrar mejor este proyecto.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section class="border-y border-slate-200 bg-slate-950 py-20 text-white">
+            <div class="mx-auto grid max-w-6xl gap-10 px-6 md:grid-cols-[0.9fr_1.1fr]">
+                <div>
+                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-300">Stack</p>
+                    <h2 class="mt-4 text-4xl font-extrabold tracking-tight">Tecnologias con las que trabajo</h2>
+                </div>
+
+                <div class="grid gap-4 sm:grid-cols-2">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">HTML, CSS, JavaScript</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">React</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">Node.js / Express</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">SQL y modelado de datos</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">Git / GitHub</div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">UI responsive y performance</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="mx-auto max-w-4xl px-6 py-24 text-center">
+            <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Contacto</p>
+            <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
+                Si buscas un perfil junior con ganas de aprender y crecer, conversemos.
+            </h2>
+            <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
+                Estoy buscando una primera oportunidad o un equipo donde pueda seguir desarrollandome, aportar con
+                compromiso y ganar experiencia profesional real.
+            </p>
+
+            <div class="mt-10 flex flex-wrap justify-center gap-4">
+                <a href="mailto:tuemail@email.com"
+                    class="rounded-2xl bg-sky-600 px-8 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-sky-700">
+                    Escribime por email
+                </a>
+                <a href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer"
+                    class="rounded-2xl border border-slate-300 bg-white px-8 py-4 text-sm font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-400">
+                    LinkedIn
                 </a>
             </div>
 
-        </div>
-    </section>
-
-    <!-- SKILLS -->
-    <section id="skills" class="bg-white py-24">
-        <div class="max-w-6xl mx-auto px-6">
-            <h2 class="text-4xl font-bold mb-16">Skills</h2>
-
-            <div class="grid md:grid-cols-3 gap-10 text-slate-700 font-medium">
-                <div>HTML / CSS / JavaScript</div>
-                <div>React</div>
-                <div>Node.js / Express</div>
-                <div>SQL</div>
-                <div>Git / GitHub</div>
-                <div>Responsive & UI Systems</div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CONTACT -->
-    <section id="contact" class="max-w-6xl mx-auto px-6 py-24 text-center">
-        <h2 class="text-4xl font-bold mb-6">Let’s build something together.</h2>
-
-        <a href="mailto:tuemail@email.com"
-            class="inline-block bg-blue-600 text-white px-10 py-4 rounded-xl font-semibold hover:bg-blue-700 transition shadow-lg shadow-blue-500/30">
-            Send Email
-        </a>
-    </section>
-
+            <p class="mt-6 text-sm text-slate-500">
+                Reemplaza este email y el link de LinkedIn por tus datos reales antes de publicarla.
+            </p>
+        </section>
+    </main>
 </body>
 
 </html>
