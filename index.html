@@ -5,345 +5,534 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="Facu Almiento, desarrollador full stack junior. Proyectos reales, formacion en Coderhouse y disponibilidad para sumarme a empresas, equipos y clientes.">
+        content="Facu Almiento, desarrollador full stack junior. Proyectos reales en producción con React, Node.js y SQL. Formación en Coderhouse.">
     <title>Facu Almiento | Desarrollador Web Full Stack Junior</title>
 
+    <link rel="canonical" href="https://facundoalmiento.vercel.app/">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="es_AR">
+    <meta property="og:url" content="https://facundoalmiento.vercel.app/">
+    <meta property="og:site_name" content="Facu Almiento | Portfolio">
+    <meta property="og:title" content="Facu Almiento | Desarrollador Web Full Stack Junior">
+    <meta property="og:description"
+        content="Desarrollador full stack junior. Proyectos reales con React, Node.js y SQL, formación en Coderhouse.">
+    <meta property="og:image" content="https://facundoalmiento.vercel.app/og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Facu Almiento, desarrollador web full stack junior">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Facu Almiento | Desarrollador Web Full Stack Junior">
+    <meta name="twitter:description"
+        content="Desarrollador full stack junior. Proyectos reales con React, Node.js y SQL, formación en Coderhouse.">
+    <meta name="twitter:image" content="https://facundoalmiento.vercel.app/og-image.png">
+
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
+                    },
+                },
+            },
+        };
+    </script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
 
     <style>
         :root {
-            color-scheme: light;
+            color-scheme: dark;
         }
 
         body {
-            font-family: 'Manrope', sans-serif;
-            background:
-                radial-gradient(circle at top left, rgba(14, 165, 233, 0.18), transparent 32%),
-                radial-gradient(circle at top right, rgba(15, 23, 42, 0.09), transparent 28%),
-                linear-gradient(180deg, #f8fafc 0%, #eef2ff 48%, #f8fafc 100%);
+            background-color: #020617;
+            background-image: radial-gradient(circle at 18% 0%, rgba(56, 189, 248, 0.10), transparent 40%);
         }
 
         .grid-pattern {
             background-image:
-                linear-gradient(rgba(15, 23, 42, 0.05) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(15, 23, 42, 0.05) 1px, transparent 1px);
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
             background-size: 34px 34px;
+        }
+
+        ::selection {
+            background-color: rgba(56, 189, 248, 0.25);
+            color: #f8fafc;
         }
     </style>
 </head>
 
-<body class="text-slate-900 antialiased">
-    <header class="sticky top-0 z-50 border-b border-slate-200/80 bg-white/80 backdrop-blur-xl">
+<body class="bg-slate-950 font-sans text-slate-300 antialiased" style="font-family: 'Manrope', sans-serif;">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-slate-950/80 backdrop-blur-xl">
         <div class="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-            <a href="#top" class="text-lg font-extrabold tracking-tight text-slate-950">
-                Facu<span class="text-sky-600">Dev</span>
+            <a href="#top" class="text-lg font-extrabold tracking-tight text-white">
+                Facu<span class="text-sky-400">Dev</span>
             </a>
 
-            <nav class="hidden items-center gap-8 text-sm font-semibold text-slate-700 md:flex">
-                <a href="#about" class="transition hover:text-sky-600">Perfil</a>
-                <a href="#services" class="transition hover:text-sky-600">Valor</a>
-                <a href="#projects" class="transition hover:text-sky-600">Proyectos</a>
-                <a href="#contact" class="transition hover:text-sky-600">Contacto</a>
+            <nav class="hidden items-center gap-8 text-sm font-medium text-slate-300 md:flex">
+                <a href="#about" class="transition hover:text-sky-300">Perfil</a>
+                <a href="#services" class="transition hover:text-sky-300">Valor</a>
+                <a href="#projects" class="transition hover:text-sky-300">Proyectos</a>
+                <a href="#contact" class="transition hover:text-sky-300">Contacto</a>
                 <a href="https://wa.me/5492215993585" target="_blank" rel="noopener noreferrer"
-                    class="rounded-full bg-slate-950 px-4 py-2 text-white transition hover:bg-slate-800">
+                    class="rounded-md border border-sky-400/40 px-4 py-2 font-mono text-xs text-sky-300 transition hover:border-sky-400 hover:bg-sky-400/10">
                     Contratame
                 </a>
             </nav>
+
+            <button id="menu-toggle" type="button" aria-controls="mobile-menu" aria-expanded="false"
+                aria-label="Abrir menu"
+                class="inline-flex size-10 items-center justify-center rounded-md border border-white/15 text-slate-300 transition hover:border-white/30 md:hidden">
+                <svg id="menu-icon-open" class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+                <svg id="menu-icon-close" class="hidden size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
         </div>
+
+        <nav id="mobile-menu"
+            class="hidden flex-col gap-1 border-t border-white/10 bg-slate-950/95 px-6 py-4 text-sm font-medium text-slate-300 md:hidden">
+            <a href="#about" class="rounded-md px-3 py-3 transition hover:bg-white/5 hover:text-sky-300">Perfil</a>
+            <a href="#services" class="rounded-md px-3 py-3 transition hover:bg-white/5 hover:text-sky-300">Valor</a>
+            <a href="#projects" class="rounded-md px-3 py-3 transition hover:bg-white/5 hover:text-sky-300">Proyectos</a>
+            <a href="#contact" class="rounded-md px-3 py-3 transition hover:bg-white/5 hover:text-sky-300">Contacto</a>
+            <a href="https://wa.me/5492215993585" target="_blank" rel="noopener noreferrer"
+                class="mt-2 rounded-md border border-sky-400/40 px-4 py-3 text-center font-mono text-xs text-sky-300 transition hover:bg-sky-400/10">
+                Contratame
+            </a>
+        </nav>
     </header>
 
     <main id="top">
         <section class="relative overflow-hidden">
-            <div class="grid-pattern absolute inset-0 -z-20 opacity-40"></div>
-            <div class="absolute inset-x-0 top-0 -z-10 h-64 bg-gradient-to-b from-sky-100/80 to-transparent"></div>
+            <div class="grid-pattern absolute inset-0 -z-10 opacity-60"
+                style="mask-image: linear-gradient(180deg, black, transparent 70%);"></div>
 
-            <div class="mx-auto grid max-w-6xl gap-10 px-6 py-12 md:grid-cols-[1.2fr_0.8fr] md:pt-8 md:pb-16">
+            <div class="mx-auto grid max-w-6xl gap-12 px-6 pb-14 pt-8 md:grid-cols-[1fr_1fr] md:items-center md:pb-16 md:pt-8">
                 <div class="max-w-3xl">
-                    <p class="mb-5 inline-flex rounded-full border border-sky-200 bg-white/80 px-4 py-2 text-sm font-semibold text-sky-700 shadow-sm">
-                        Desarrollador web full stack junior disponible para empresas, equipos y proyectos freelance
-                    </p>
+                    <p class="mb-5 font-mono text-sm text-sky-400">Hola, soy Facu 👋</p>
 
-                    <h1 class="max-w-3xl text-5xl font-extrabold leading-tight tracking-tight text-slate-950 md:text-6xl">
-                        Desarrollo sitios y proyectos web con compromiso, criterio visual y muchas ganas de crecer.
+                    <h1 class="max-w-3xl text-balance text-4xl font-extrabold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl">
+                        Desarrollador Web Full Stack Junior | React, Node.js & SQL
                     </h1>
 
-                    <p class="mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                        Tengo formacion full stack finalizada en Coderhouse y sigo sumando practica con proyectos
-                        reales. Estoy buscando oportunidades para trabajar con empresas, equipos o clientes donde pueda
-                        aportar compromiso, buena actitud y seguir ganando experiencia profesional en desarrollo web.
+                    <p class="mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-400">
+                        Terminé mi formación Full Stack en Coderhouse y estoy buscando mi primera oportunidad para
+                        seguir creciendo en un equipo. Me gusta crear sitios claros, funcionales y cuidar los
+                        detalles.
                     </p>
 
-                    <div class="mt-8 flex flex-wrap gap-4">
+                    <div class="mt-8 flex flex-wrap items-center gap-4">
                         <a href="https://wa.me/5492215993585" target="_blank" rel="noopener noreferrer"
-                            class="rounded-2xl bg-slate-950 px-7 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-slate-800">
+                            class="rounded-md border border-sky-400/40 bg-sky-400/10 px-6 py-3 font-mono text-sm text-sky-300 transition hover:border-sky-400 hover:bg-sky-400/20">
                             Contactame por WhatsApp
                         </a>
                         <a href="#projects"
-                            class="rounded-2xl border border-slate-300 bg-white px-7 py-4 text-sm font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-400">
+                            class="rounded-md border border-white/15 px-6 py-3 font-mono text-sm text-slate-300 transition hover:border-white/30 hover:text-white">
                             Ver proyectos
                         </a>
                     </div>
 
-                    <div class="mt-5 flex flex-wrap gap-4 text-sm font-semibold text-slate-600">
+                    <div class="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-400">
                         <a href="https://wa.me/5492215993585" target="_blank" rel="noopener noreferrer"
-                            class="transition hover:text-sky-700">
+                            class="tabular-nums transition hover:text-sky-300">
                             WhatsApp: +54 9 221 599 3585
                         </a>
                         <a href="https://linkedin.com/in/facundoalmiento" target="_blank" rel="noopener noreferrer"
-                            class="transition hover:text-sky-700">
+                            class="transition hover:text-sky-300">
                             LinkedIn
                         </a>
-                        <span>Disponible para trabajar</span>
+                        <span class="inline-flex items-center gap-2 font-mono text-xs text-emerald-400">
+                            <span class="relative flex size-2">
+                                <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75"></span>
+                                <span class="relative inline-flex size-2 rounded-full bg-emerald-400"></span>
+                            </span>
+                            Disponible para trabajar
+                        </span>
                     </div>
 
-                    <div class="mt-8 grid gap-4 sm:grid-cols-3">
-                        <div class="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
-                            <p class="text-sm font-semibold text-slate-500">Perfil</p>
-                            <p class="mt-2 text-lg font-bold text-slate-900">Trainee / Junior</p>
+                    <dl class="mt-10 grid grid-cols-2 gap-6 border-t border-white/10 pt-8">
+                        <div>
+                            <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Perfil</dt>
+                            <dd class="mt-2 text-base font-semibold text-slate-100">Trainee / Junior</dd>
                         </div>
-                        <div class="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
-                            <p class="text-sm font-semibold text-slate-500">Stack base</p>
-                            <p class="mt-2 text-lg font-bold text-slate-900">React, Node.js, SQL</p>
+                        <div>
+                            <dt class="font-mono text-xs uppercase tracking-wider text-slate-500">Stack base</dt>
+                            <dd class="mt-2 text-base font-semibold text-slate-100">React, Node.js, SQL</dd>
                         </div>
-                        <div class="rounded-2xl border border-slate-200 bg-white/90 p-5 shadow-sm">
-                            <p class="text-sm font-semibold text-slate-500">Enfoque</p>
-                            <p class="mt-2 text-lg font-bold text-slate-900">Compromiso y evolucion</p>
-                        </div>
-                    </div>
+                    </dl>
                 </div>
 
-                <aside class="self-end rounded-[2rem] border border-slate-200 bg-slate-950 p-8 text-white shadow-2xl shadow-slate-900/20">
-                    <p class="text-sm font-semibold uppercase tracking-[0.18em] text-sky-300">Lo que ofrezco hoy</p>
-                    <div class="mt-8 space-y-6">
-                        <div>
-                            <p class="text-lg font-bold">Base tecnica y ganas de responder</p>
-                            <p class="mt-2 text-sm leading-7 text-slate-300">
-                                Me gusta trabajar con orden, entender lo que hago y mejorar proyecto a proyecto.
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-lg font-bold">Aprendizaje constante</p>
-                            <p class="mt-2 text-sm leading-7 text-slate-300">
-                                Estoy enfocado en seguir sumando practica real en frontend, backend e integracion.
-                            </p>
-                        </div>
-                        <div>
-                            <p class="text-lg font-bold">Buena actitud de trabajo</p>
-                            <p class="mt-2 text-sm leading-7 text-slate-300">
-                                Busco aportar con responsabilidad, comunicacion clara y ganas de crecer dentro de un equipo.
-                            </p>
-                        </div>
+                <a href="#projects"
+                    class="group block overflow-hidden rounded-lg border border-white/10 bg-[#0b0f1a] shadow-2xl shadow-black/40 transition hover:border-sky-400/30">
+                    <div class="flex items-center gap-2 border-b border-white/10 bg-white/[0.03] px-4 py-3">
+                        <span class="size-2.5 rounded-full bg-red-500/70"></span>
+                        <span class="size-2.5 rounded-full bg-amber-400/70"></span>
+                        <span class="size-2.5 rounded-full bg-emerald-500/70"></span>
+                        <span class="ml-3 truncate font-mono text-xs text-slate-500">locosporloscuatrisoficial.vercel.app</span>
                     </div>
-                </aside>
+                    <div class="overflow-hidden">
+                        <img src="/projects/locos-cuatris.jpg" alt="Captura del sitio Locos por los Cuatris"
+                            width="1600" height="764" loading="lazy"
+                            class="h-auto w-full transition duration-300 group-hover:scale-[1.03]">
+                    </div>
+                    <p class="border-t border-white/10 px-4 py-3 font-mono text-xs text-slate-500">
+                        Mi proyecto principal
+                        <span class="text-sky-400 transition group-hover:text-sky-300">— ver caso completo ↓</span>
+                    </p>
+                </a>
             </div>
         </section>
 
-        <section id="about" class="mx-auto max-w-6xl px-6 py-14">
-            <div class="grid gap-8 rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-xl shadow-slate-200/40 md:grid-cols-[0.9fr_1.1fr]">
-                <div>
-                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Perfil</p>
-                    <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950 md:text-4xl">
-                        Un perfil junior serio, con base tecnica y muchas ganas de trabajar.
-                    </h2>
-                </div>
-
-                <div class="space-y-5 text-base leading-8 text-slate-600">
-                    <p>
-                        Termine mi formacion full stack en Coderhouse y sigo construyendo proyectos para ganar
-                        experiencia real en herramientas y flujos de trabajo usados en el dia a dia profesional.
-                    </p>
-                    <p>
-                        Me interesa especialmente el desarrollo con React y Node.js, y disfruto trabajar tanto en la
-                        interfaz como en la logica de una aplicacion.
-                    </p>
-                    <p>
-                        Hoy estoy buscando una oportunidad concreta para trabajar, aprender dentro de un equipo y
-                        aportar con dedicacion, constancia y predisposicion desde el primer dia.
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="mx-auto max-w-6xl px-6 py-8">
-            <div class="mb-9 max-w-2xl">
-                <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Lo que puedo aportar</p>
-                <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950">Por que puede servirte trabajar conmigo</h2>
+        <section id="about" class="mx-auto max-w-6xl px-6 py-14 md:py-16">
+            <div class="mb-10 flex items-center gap-4">
+                <h2 class="flex items-baseline gap-3 whitespace-nowrap text-2xl font-bold text-white">
+                    <span class="font-mono text-lg text-sky-400">01.</span>Perfil
+                </h2>
+                <span class="h-px flex-1 bg-white/10" aria-hidden="true"></span>
             </div>
 
-            <div class="grid gap-5 md:grid-cols-3">
-                <article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
-                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Frontend</p>
-                    <h3 class="mt-4 text-2xl font-bold text-slate-950">Cuidado por la parte visual</h3>
-                    <p class="mt-4 text-sm leading-7 text-slate-600">
-                        Me gusta crear interfaces claras, responsive y prolijas, cuidando tanto la presentacion como la
-                        experiencia de uso.
-                    </p>
-                </article>
-
-                <article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
-                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Backend</p>
-                    <h3 class="mt-4 text-2xl font-bold text-slate-950">Base full stack aplicada</h3>
-                    <p class="mt-4 text-sm leading-7 text-slate-600">
-                        Vengo practicando autenticacion, CRUD, consumo de APIs y estructura de aplicaciones para seguir
-                        consolidando una base tecnica util para proyectos reales.
-                    </p>
-                </article>
-
-                <article class="rounded-[1.75rem] border border-slate-200 bg-white p-8 shadow-lg shadow-slate-200/50">
-                    <p class="text-sm font-bold uppercase tracking-[0.18em] text-slate-500">Producto</p>
-                    <h3 class="mt-4 text-2xl font-bold text-slate-950">Compromiso para sumar</h3>
-                    <p class="mt-4 text-sm leading-7 text-slate-600">
-                        Busco oportunidades donde pueda responder con responsabilidad, aprender rapido y convertirme en
-                        una buena incorporacion para el equipo.
-                    </p>
-                </article>
-            </div>
-        </section>
-
-        <section id="projects" class="mx-auto max-w-6xl px-6 py-16">
-            <div class="mb-9 flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
-                <div class="max-w-2xl">
-                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Proyectos</p>
-                    <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950">Trabajo reciente</h2>
-                </div>
-                <p class="max-w-xl text-sm leading-7 text-slate-600">
-                    Una seleccion breve de trabajos para mostrar como resuelvo, presento, publico y termino mis proyectos.
+            <div class="grid gap-10 md:grid-cols-[0.9fr_1.1fr]">
+                <p class="text-balance text-2xl font-bold leading-snug text-slate-100 md:text-3xl">
+                    Cuido el detalle, tanto en el diseño como en el código.
                 </p>
-            </div>
 
-            <div class="grid gap-6 md:grid-cols-2">
-                <article class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
+                <div class="space-y-5 text-pretty text-base leading-8 text-slate-400">
+                    <p>
+                        Me enfoco en React para el frontend y en Node.js con Express para el backend, sin perder de
+                        vista el modelado de datos en SQL.
+                    </p>
+                    <p>
+                        Antes de escribir código reviso bien qué problema estoy resolviendo: eso incluye pensar la
+                        navegación, los estados de carga y los casos límite.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="mx-auto max-w-6xl px-6 py-14 md:py-16">
+            <div class="mb-10 flex items-center gap-4">
+                <h2 class="flex items-baseline gap-3 whitespace-nowrap text-2xl font-bold text-white">
+                    <span class="font-mono text-lg text-sky-400">02.</span>Valor
+                </h2>
+                <span class="h-px flex-1 bg-white/10" aria-hidden="true"></span>
+            </div>
+            <p class="mb-9 max-w-2xl text-pretty text-slate-400">Qué aporto a un equipo de desarrollo.</p>
+
+            <div class="grid gap-4 md:grid-cols-3">
+                <article class="rounded-lg border border-white/10 bg-white/[0.02] p-7 transition hover:border-sky-400/30 hover:bg-white/[0.04]">
+                    <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Frontend</p>
+                    <h3 class="mt-4 text-balance text-xl font-bold text-slate-100">Cuidado por la parte visual</h3>
+                    <p class="mt-4 text-pretty text-sm leading-7 text-slate-400">
+                        Interfaces claras, responsive y orientadas a la experiencia de usuario (UX).
+                    </p>
+                </article>
+
+                <article class="rounded-lg border border-white/10 bg-white/[0.02] p-7 transition hover:border-sky-400/30 hover:bg-white/[0.04]">
+                    <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Backend</p>
+                    <h3 class="mt-4 text-balance text-xl font-bold text-slate-100">Base full stack aplicada</h3>
+                    <p class="mt-4 text-pretty text-sm leading-7 text-slate-400">
+                        Integración de APIs REST, autenticación y gestión de bases de datos.
+                    </p>
+                </article>
+
+                <article class="rounded-lg border border-white/10 bg-white/[0.02] p-7 transition hover:border-sky-400/30 hover:bg-white/[0.04]">
+                    <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Producto</p>
+                    <h3 class="mt-4 text-balance text-xl font-bold text-slate-100">Compromiso para sumar</h3>
+                    <p class="mt-4 text-pretty text-sm leading-7 text-slate-400">
+                        Código limpio, mantenible y adaptabilidad a flujos de trabajo profesionales.
+                    </p>
+                </article>
+            </div>
+        </section>
+
+        <section id="projects" class="mx-auto max-w-6xl px-6 py-14 md:py-16">
+            <div class="mb-10 flex items-center gap-4">
+                <h2 class="flex items-baseline gap-3 whitespace-nowrap text-2xl font-bold text-white">
+                    <span class="font-mono text-lg text-sky-400">03.</span>Proyectos
+                </h2>
+                <span class="h-px flex-1 bg-white/10" aria-hidden="true"></span>
+            </div>
+            <p class="mb-9 max-w-xl text-pretty text-slate-400">
+                Selección de proyectos: de la arquitectura visual al despliegue en producción.
+            </p>
+
+            <article class="overflow-hidden rounded-lg border border-white/10 bg-white/[0.02] transition hover:border-sky-400/30">
+                <div class="grid grid-cols-2 border-b border-white/10">
+                    <div class="relative border-r border-white/10">
+                        <span class="absolute left-3 top-3 rounded-md bg-slate-950/90 px-2 py-1 font-mono text-[11px] uppercase tracking-wider text-slate-400">
+                            Antes
+                        </span>
+                        <img src="/projects/locos-cuatris-antes.jpg" alt="Sitio de Locos por los Cuatris antes del rediseño"
+                            loading="lazy" class="h-auto w-full">
+                    </div>
+                    <div class="relative">
+                        <span class="absolute left-3 top-3 rounded-md bg-sky-400/15 px-2 py-1 font-mono text-[11px] uppercase tracking-wider text-sky-300">
+                            Después
+                        </span>
+                        <img src="/projects/locos-cuatris.jpg" alt="Sitio de Locos por los Cuatris despues del rediseño"
+                            width="1600" height="764" loading="lazy" class="h-auto w-full">
+                    </div>
+                </div>
+                <div class="p-7 sm:p-8">
+                        <div class="flex items-center justify-between gap-4">
+                            <h3 class="text-balance text-xl font-bold text-slate-100">Locos por los cuatris!! Travesias</h3>
+                            <span class="inline-flex items-center gap-2 font-mono text-xs text-emerald-400">
+                                <span class="size-1.5 rounded-full bg-emerald-400"></span>
+                                Lanzado
+                            </span>
+                        </div>
+                        <p class="mt-4 text-pretty text-sm leading-7 text-slate-400">
+                            Sitio para LPLC, una comunidad de travesías en cuatriciclo: presenta las próximas salidas
+                            con fechas y cupos, y deriva las consultas de inscripción a WhatsApp.
+                        </p>
+                        <p class="mt-4 text-pretty text-sm leading-7 text-slate-400">
+                            <span class="font-mono text-xs uppercase tracking-wider text-slate-500">Qué hice yo:</span>
+                            Tomé un sitio ya existente, hecho por otro desarrollador, y lo reconstruí de cero: nueva
+                            base en React, animaciones con Framer Motion y GSAP, y despliegue en producción.
+                        </p>
+                        <ul class="mt-4 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-slate-500">
+                            <li>React</li>
+                            <li>Vite</li>
+                            <li>Tailwind CSS</li>
+                            <li>Framer Motion</li>
+                            <li>GSAP</li>
+                        </ul>
+                        <div class="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+                            <a href="https://locosporloscuatrisoficial.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="group inline-flex items-center gap-2 font-mono text-sm text-sky-400 transition hover:text-sky-300">
+                                Ver sitio
+                                <svg class="size-4 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6l6 6-6 6M4.5 12h15" />
+                                </svg>
+                            </a>
+                            <a href="https://github.com/facundoalmiento/Locosporloscuatris2.0" target="_blank" rel="noopener noreferrer"
+                                class="group inline-flex items-center gap-2 font-mono text-sm text-slate-300 transition hover:text-white">
+                                Ver código
+                                <svg class="size-4 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24"
+                                    stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6l6 6-6 6M4.5 12h15" />
+                                </svg>
+                            </a>
+                        </div>
+                </div>
+            </article>
+
+            <div class="mt-5 grid gap-5">
+                <article class="rounded-lg border border-white/10 bg-white/[0.02] p-7 transition hover:border-sky-400/30 hover:bg-white/[0.04] sm:p-8">
                     <div class="flex items-center justify-between gap-4">
-                        <h3 class="text-2xl font-extrabold text-slate-950">Locos por los cuatris</h3>
-                        <span class="rounded-full bg-emerald-100 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-emerald-700">
-                            Proyecto lanzado
+                        <h3 class="text-balance text-xl font-bold text-slate-100">Morga</h3>
+                        <span class="inline-flex items-center gap-2 font-mono text-xs text-emerald-400">
+                            <span class="size-1.5 rounded-full bg-emerald-400"></span>
+                            En uso
                         </span>
                     </div>
-                    <p class="mt-6 text-sm leading-7 text-slate-600">
-                        Sitio web desarrollado y lanzado para una comunidad vinculada al mundo de los cuatriciclos. Es
-                        mi proyecto mas completo hasta hoy porque integra presentacion visual, navegacion, estructura
-                        responsive, armado de contenido y publicacion online en Vercel.
+                    <p class="mt-5 text-pretty text-sm leading-7 text-slate-400">
+                        Aplicación personal que uso a diario para organizar proyectos, tareas y foco semanal:
+                        dashboard con métricas calculadas a partir de datos reales, CRUD completo con filtros y
+                        búsqueda, tema oscuro y layout responsive con sidebar en escritorio y navegación inferior en
+                        mobile.
                     </p>
-                    <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-slate-700">
-                        <span class="rounded-full bg-slate-100 px-4 py-2">Proyecto real</span>
-                        <span class="rounded-full bg-slate-100 px-4 py-2">HTML</span>
-                        <span class="rounded-full bg-slate-100 px-4 py-2">CSS</span>
-                        <span class="rounded-full bg-slate-100 px-4 py-2">Responsive design</span>
-                        <span class="rounded-full bg-slate-100 px-4 py-2">Vercel</span>
-                    </div>
-                    <ul class="mt-6 space-y-2 text-sm leading-7 text-slate-600">
-                        <li>Proyecto finalizado, lanzado y disponible online.</li>
-                        <li>Trabajo de estructura visual, secciones, navegacion y adaptacion mobile.</li>
-                        <li>Ejemplo concreto de una presencia web completa ya publicada.</li>
+                    <ul class="mt-5 flex flex-wrap gap-x-4 gap-y-1 font-mono text-xs text-slate-500">
+                        <li>React</li>
+                        <li>TypeScript</li>
+                        <li>Vite</li>
+                        <li>Tailwind CSS</li>
+                        <li>React Router</li>
                     </ul>
-                    <a href="https://locosporloscuatristravesias.com/" target="_blank" rel="noopener noreferrer"
-                        class="mt-8 inline-flex items-center gap-2 text-sm font-bold text-sky-700 transition hover:text-sky-900">
+                    <a href="https://morgaok.vercel.app/" target="_blank" rel="noopener noreferrer"
+                        class="group mt-6 inline-flex items-center gap-2 font-mono text-sm text-sky-400 transition hover:text-sky-300">
                         Ver online
-                        <span aria-hidden="true">-&gt;</span>
-                    </a>
-                </article>
-
-                <article class="rounded-[2rem] border border-slate-200 bg-white p-8 shadow-xl shadow-slate-200/50">
-                    <div class="flex items-center justify-between gap-4">
-                        <h3 class="text-2xl font-extrabold text-slate-950">FlowPilot</h3>
-                        <span class="rounded-full bg-sky-100 px-4 py-2 text-xs font-bold uppercase tracking-[0.16em] text-sky-700">
-                            Landing SaaS
-                        </span>
-                    </div>
-                    <p class="mt-6 text-sm leading-7 text-slate-600">
-                        Landing orientada a practicar jerarquia visual, estructura y armado responsive. Me ayudo a
-                        mejorar decisiones de UI, claridad del mensaje y presentacion visual.
-                    </p>
-                    <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold text-slate-700">
-                        <span class="rounded-full bg-slate-100 px-4 py-2">HTML</span>
-                        <span class="rounded-full bg-slate-100 px-4 py-2">CSS</span>
-                        <span class="rounded-full bg-slate-100 px-4 py-2">Responsive UI</span>
-                    </div>
-                    <a href="https://flowpilot-landing-iota.vercel.app/" target="_blank" rel="noopener noreferrer"
-                        class="mt-8 inline-flex items-center gap-2 text-sm font-bold text-sky-700 transition hover:text-sky-900">
-                        Ver demo online
-                        <span aria-hidden="true">-&gt;</span>
+                        <svg class="size-4 transition group-hover:translate-x-0.5" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor" stroke-width="2.5" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6l6 6-6 6M4.5 12h15" />
+                        </svg>
                     </a>
                 </article>
             </div>
         </section>
 
-        <section class="mx-auto max-w-6xl px-6 py-6">
-            <div class="rounded-[2rem] border border-slate-200 bg-white/90 p-8 shadow-xl shadow-slate-200/40">
-                <div class="grid gap-6 md:grid-cols-[0.8fr_1.2fr]">
-                    <div>
-                        <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Formacion</p>
-                        <h2 class="mt-4 text-3xl font-extrabold tracking-tight text-slate-950">
-                            Base tecnica construida en Coderhouse y reforzada con practica constante.
-                        </h2>
+        <section class="mx-auto max-w-6xl px-6 py-14 md:py-16">
+            <div class="mb-10 flex items-center gap-4">
+                <h2 class="flex items-baseline gap-3 whitespace-nowrap text-2xl font-bold text-white">
+                    <span class="font-mono text-lg text-sky-400">04.</span>Formación
+                </h2>
+                <span class="h-px flex-1 bg-white/10" aria-hidden="true"></span>
+            </div>
+
+            <div class="grid gap-8 md:grid-cols-[0.8fr_1.2fr]">
+                <p class="text-balance text-xl font-bold leading-snug text-slate-100">
+                    Formación full stack en Coderhouse: JavaScript, React, Node.js, Express y SQL aplicados en
+                    proyectos reales.
+                </p>
+                <div class="space-y-4">
+                    <div class="rounded-lg border border-white/10 bg-white/[0.02] p-5">
+                        <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Carrera principal</p>
+                        <p class="mt-2 text-lg font-bold text-slate-100">Full Stack Developer - Coderhouse</p>
+                        <p class="mt-2 text-pretty text-sm leading-7 text-slate-400">
+                            Programa completo de desarrollo web: JavaScript, React y SQL en frontend; Node.js y
+                            Express en backend; arquitectura, testing y escalabilidad de aplicaciones.
+                        </p>
                     </div>
-                    <div class="space-y-4 text-slate-600">
-                        <div class="rounded-2xl border border-slate-200 bg-slate-50 p-5">
-                            <p class="text-sm font-semibold text-slate-500">Carrera principal</p>
-                            <p class="mt-2 text-lg font-bold text-slate-900">Full Stack Developer - Coderhouse</p>
-                            <p class="mt-2 text-sm leading-7">
-                                Formacion finalizada con contenidos de desarrollo web, JavaScript, React, SQL,
-                                backend con Node.js y Express, arquitectura, testing y escalabilidad.
-                            </p>
-                        </div>
-                        <div class="grid gap-4 sm:grid-cols-2 text-sm font-semibold text-slate-700">
-                            <div class="rounded-2xl border border-slate-200 bg-white p-4">React y desarrollo frontend</div>
-                            <div class="rounded-2xl border border-slate-200 bg-white p-4">Backend con Node.js y Express</div>
-                            <div class="rounded-2xl border border-slate-200 bg-white p-4">SQL y estructura de datos</div>
-                            <div class="rounded-2xl border border-slate-200 bg-white p-4">Practica continua con proyectos</div>
-                        </div>
+                    <div class="grid gap-3 sm:grid-cols-2 text-sm font-medium text-slate-300">
+                        <div class="rounded-lg border border-white/10 bg-white/[0.02] p-4">React y desarrollo frontend</div>
+                        <div class="rounded-lg border border-white/10 bg-white/[0.02] p-4">Backend con Node.js y Express</div>
+                        <div class="rounded-lg border border-white/10 bg-white/[0.02] p-4">SQL y estructura de datos</div>
+                        <div class="rounded-lg border border-white/10 bg-white/[0.02] p-4">Control de versiones con Git</div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="border-y border-slate-200 bg-slate-950 py-14 text-white">
-            <div class="mx-auto grid max-w-6xl gap-8 px-6 md:grid-cols-[0.9fr_1.1fr]">
-                <div>
-                    <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-300">Stack</p>
-                    <h2 class="mt-4 text-4xl font-extrabold tracking-tight">Tecnologias con las que puedo trabajar hoy</h2>
-                </div>
+        <section class="mx-auto max-w-6xl px-6 py-14 md:py-16">
+            <div class="mb-10 flex items-center gap-4">
+                <h2 class="flex items-baseline gap-3 whitespace-nowrap text-2xl font-bold text-white">
+                    <span class="font-mono text-lg text-sky-400">05.</span>Stack
+                </h2>
+                <span class="h-px flex-1 bg-white/10" aria-hidden="true"></span>
+            </div>
 
-                <div class="grid gap-4 sm:grid-cols-2">
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">HTML, CSS, JavaScript</div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">React</div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">Node.js / Express</div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">SQL y modelado de datos</div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">Git / GitHub</div>
-                    <div class="rounded-2xl border border-white/10 bg-white/5 p-5">UI responsive y performance</div>
+            <div class="grid gap-4 sm:grid-cols-2">
+                <div class="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.02] p-5 text-slate-200">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-md bg-sky-400/10 text-sky-300">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M8 9l-4 3 4 3M16 9l4 3-4 3M14 5l-4 14" />
+                        </svg>
+                    </span>
+                    HTML, CSS, JavaScript
+                </div>
+                <div class="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.02] p-5 text-slate-200">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-md bg-sky-400/10 text-sky-300">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                            <circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none" />
+                            <ellipse cx="12" cy="12" rx="10" ry="4.2" />
+                            <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)" />
+                            <ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)" />
+                        </svg>
+                    </span>
+                    React
+                </div>
+                <div class="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.02] p-5 text-slate-200">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-md bg-sky-400/10 text-sky-300">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <rect x="4" y="4" width="16" height="6" rx="1.5" />
+                            <rect x="4" y="14" width="16" height="6" rx="1.5" />
+                            <circle cx="7.5" cy="7" r="0.6" fill="currentColor" stroke="none" />
+                            <circle cx="7.5" cy="17" r="0.6" fill="currentColor" stroke="none" />
+                        </svg>
+                    </span>
+                    Node.js / Express
+                </div>
+                <div class="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.02] p-5 text-slate-200">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-md bg-sky-400/10 text-sky-300">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <ellipse cx="12" cy="6" rx="8" ry="3" />
+                            <path stroke-linecap="round" d="M4 6v6c0 1.66 3.58 3 8 3s8-1.34 8-3V6" />
+                            <path stroke-linecap="round" d="M4 12v6c0 1.66 3.58 3 8 3s8-1.34 8-3v-6" />
+                        </svg>
+                    </span>
+                    SQL y modelado de datos
+                </div>
+                <div class="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.02] p-5 text-slate-200">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-md bg-sky-400/10 text-sky-300">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <circle cx="6" cy="6" r="2" />
+                            <circle cx="6" cy="18" r="2" />
+                            <circle cx="18" cy="6" r="2" />
+                            <path stroke-linecap="round" d="M6 8v8M8 6h4a4 4 0 014 4v.5" />
+                        </svg>
+                    </span>
+                    Git / GitHub
+                </div>
+                <div class="flex items-center gap-4 rounded-lg border border-white/10 bg-white/[0.02] p-5 text-slate-200">
+                    <span class="flex size-10 shrink-0 items-center justify-center rounded-md bg-sky-400/10 text-sky-300">
+                        <svg class="size-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M13 3L4 14h6l-1 7 9-11h-6l1-7z" />
+                        </svg>
+                    </span>
+                    UI responsive y performance
                 </div>
             </div>
         </section>
 
-        <section id="contact" class="mx-auto max-w-4xl px-6 py-16 text-center">
-            <p class="text-sm font-bold uppercase tracking-[0.2em] text-sky-700">Contacto</p>
-            <h2 class="mt-4 text-4xl font-extrabold tracking-tight text-slate-950 md:text-5xl">
-                Si queres contratarme para tu empresa, proyecto o equipo, hablemos por WhatsApp.
+        <section id="contact" class="mx-auto max-w-4xl px-6 py-16 text-center md:py-24">
+            <p class="font-mono text-sm text-sky-400">06. Contacto</p>
+            <h2 class="mx-auto mt-4 max-w-2xl text-balance text-3xl font-extrabold tracking-tight text-white md:text-5xl">
+                ¿Buscás sumar un desarrollador full stack a tu equipo? Hablemos por WhatsApp.
             </h2>
-            <p class="mx-auto mt-6 max-w-2xl text-lg leading-8 text-slate-600">
-                Estoy buscando una oportunidad concreta para trabajar, sumar experiencia profesional y aportar con
-                compromiso, buena comunicacion y muchas ganas de crecer.
+            <p class="mx-auto mt-6 max-w-2xl text-pretty text-lg leading-8 text-slate-400">
+                Escribime y charlamos sobre el proyecto o el rol que tengas en mente.
             </p>
 
             <div class="mt-8 flex flex-wrap justify-center gap-4">
                 <a href="https://wa.me/5492215993585" target="_blank" rel="noopener noreferrer"
-                    class="rounded-2xl bg-sky-600 px-8 py-4 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-sky-700">
+                    class="rounded-md border border-sky-400/40 bg-sky-400/10 px-7 py-3.5 font-mono text-sm text-sky-300 transition hover:border-sky-400 hover:bg-sky-400/20">
                     Escribime por WhatsApp
                 </a>
                 <a href="https://linkedin.com/in/facundoalmiento" target="_blank" rel="noopener noreferrer"
-                    class="rounded-2xl border border-slate-300 bg-white px-8 py-4 text-sm font-bold text-slate-800 transition hover:-translate-y-0.5 hover:border-slate-400">
+                    class="rounded-md border border-white/15 px-7 py-3.5 font-mono text-sm text-slate-300 transition hover:border-white/30 hover:text-white">
                     LinkedIn
                 </a>
             </div>
 
             <p class="mt-6 text-sm text-slate-500">
-                Tambien puedo compartir mi CV completo, mas proyectos o responder consultas por WhatsApp y LinkedIn.
+                También puedo compartir mi CV completo o más proyectos por WhatsApp y LinkedIn.
             </p>
         </section>
     </main>
+
+    <footer class="border-t border-white/10">
+        <div class="mx-auto grid max-w-6xl gap-8 px-6 py-12 md:grid-cols-[1fr_auto_auto]">
+            <div class="max-w-sm">
+                <a href="#top" class="text-lg font-extrabold tracking-tight text-white">
+                    Facu<span class="text-sky-400">Dev</span>
+                </a>
+                <p class="mt-3 text-pretty text-sm leading-7 text-slate-400">
+                    Desarrollador full stack junior — React, Node.js y SQL.
+                </p>
+            </div>
+
+            <div>
+                <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Navegación</p>
+                <nav class="mt-4 flex flex-col gap-2 text-sm text-slate-300">
+                    <a href="#about" class="w-fit transition hover:text-sky-300">Perfil</a>
+                    <a href="#services" class="w-fit transition hover:text-sky-300">Valor</a>
+                    <a href="#projects" class="w-fit transition hover:text-sky-300">Proyectos</a>
+                    <a href="#contact" class="w-fit transition hover:text-sky-300">Contacto</a>
+                </nav>
+            </div>
+
+            <div>
+                <p class="font-mono text-xs uppercase tracking-wider text-slate-500">Contacto</p>
+                <nav class="mt-4 flex flex-col gap-2 text-sm text-slate-300">
+                    <a href="https://wa.me/5492215993585" target="_blank" rel="noopener noreferrer"
+                        class="w-fit transition hover:text-sky-300">WhatsApp</a>
+                    <a href="https://linkedin.com/in/facundoalmiento" target="_blank" rel="noopener noreferrer"
+                        class="w-fit transition hover:text-sky-300">LinkedIn</a>
+                </nav>
+            </div>
+        </div>
+
+        <div class="border-t border-white/10">
+            <div class="mx-auto flex max-w-6xl flex-col gap-2 px-6 py-6 font-mono text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+                <p>&copy; <span id="current-year">2026</span> Facu Almiento. Todos los derechos reservados.</p>
+                <p>Hecho con HTML, Tailwind CSS y Vite.</p>
+            </div>
+        </div>
+    </footer>
+
     <script type="module" src="/main.js"></script>
 </body>
 
